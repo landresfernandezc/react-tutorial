@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState ,useEffect} from "react";
 import '../App.css';
 import ListItem from './ListItem'
 const List = () => {
@@ -10,6 +10,9 @@ const List = () => {
         { brand: 'Ferrari', url: 'https://imgd.aeplcdn.com/0x0/cw/ec/33641/Ferrari-812-Exterior-123393.jpg?wm=0',description:'Ferraris are what dreams are made of. Fast, sexy, and highly exclusive, these Italian supercars push the boundaries of performance and cause a stir wherever they go. The sensually styled Roma coupe is the most accessible in terms of price, but even it is far too expensive for most people.' }
     ]
     let [filterList, setFilterList] = useState(carList);
+    useEffect(() => {
+            
+    }, []);
     function handleChange(event) {
         setState(event.target.value);
     }

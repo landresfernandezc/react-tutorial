@@ -1,0 +1,23 @@
+
+.container{
+
+  text-align: center;
+}
+.container-item{
+  align-self: center;
+  position: relative;
+  padding: 10px 10px 10px 10px;
+  margin: 10px 10px 10px 10px;;
+  display: inline-block;
+  border:5px solid black;
+}
+.container-item-img{
+  width: 800px;
+  height: 400px;
+}
+.container-item-p{
+  width: 800px;
+  text-align: justify;
+  padding: auto;
+  position: relative;
+}
