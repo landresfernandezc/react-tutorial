@@ -3,7 +3,9 @@ import './App.css';
 import List from './components/List';
 function App() {
   return (
-      <List/>
+    <>
+      <List><h1>Buscador de autos:</h1></List>
+    </>
   );
 }
 
