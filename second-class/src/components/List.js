@@ -5,6 +5,7 @@ const List = (props) => {
   let [filter, setState] = useState("");
   let [loading, setLoading] = useState(true);
   let [filterList, setFilterList] = useState([]);
+  let [initialList, setInitialList] = useState([]);
   let [selectList, setSelectList] = useState([]);
   async function fetchHandler() {
     let arrayTemp = [];
@@ -15,18 +16,18 @@ const List = (props) => {
           const urlBreed = await getBreedUrlImage(key);
           arrayTemp.push({ breed: key, url: urlBreed.message });
           setLoading(false);
-          setFilterList(arrayTemp);
+          setFilterList([...arrayTemp]);
+          setInitialList([...arrayTemp]);
           return key;
         });
         setSelectList(Object.keys(data.message));
         return data;
       });
-    console.log(filterList)
     return fetchResult;
   }
   useEffect(() => {
     fetchHandler();
-  }, [filter]);
+  }, []);
 
   async function getBreedUrlImage(key) {
     const urlImg = await fetch(
@@ -38,7 +39,11 @@ const List = (props) => {
     setState(event.target.value);
   }
   function updateFilterList() {
-    setFilterList(filterList.filter((item) => item.breed === filter));
+    setFilterList([...initialList]);
+    console.log(filter)
+    if(filter !== 'Select the Feed'){
+      setFilterList(initialList.filter((item) => item.breed === filter));
+    }
   }
   return (
     <>

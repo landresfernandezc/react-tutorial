@@ -4,7 +4,7 @@ import List from './components/List';
 function App() {
   return (
     <>
-      <List><h1>Buscador de autos:</h1></List>
+      <List><h1>Dogs search:</h1></List>
     </>
   );
 }
